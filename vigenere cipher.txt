@@ -1,0 +1,25 @@
+def vigenere_cipher(message, key, mode):
+    message = message.upper()
+    key = key.upper()
+    encrypted_message = ""
+    key_index = 0
+    
+    for char in message:
+        if char.isalpha():
+            if mode == 'encrypt':
+                encrypted_message += chr((ord(char) + ord(key[key_index])) % 26 + 65)
+            elif mode == 'decrypt':
+                encrypted_message += chr((ord(char) - ord(key[key_index])) % 26 + 65)
+            key_index = (key_index + 1) % len(key)
+        else:
+            encrypted_message += char
+    return encrypted_message
+    
+message = input()
+key =input() #ключь = "KEY"
+encrypted_message = vigenere_cipher(message, key, 'encrypt')
+print("Зашифрованное сообщение:", encrypted_message)
+
+# Расшифрование сообщения
+decrypted_message = vigenere_cipher(encrypted_message, key, 'decrypt')
+# print("Расшифрованное сообщение:", decrypted_message)

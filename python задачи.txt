@@ -1,0 +1,35 @@
+n=int(input())
+if n % 2 == 0 and n>2 and n<6:
+    print("Not Weird")
+elif n % 2 == 0 and n>6 and n<21:
+    print("Not Weird")
+elif n % 2 == 0 and n > 20:
+    print("Not Weird")
+elif n % 2 != 0:
+    print("Weird")
+
+
+a = int(input())
+b = int(input())
+sum = a + b
+difference = a - b
+product = a * b
+
+print(sum)
+print(difference)
+print(product)
+
+
+a = int(input())
+b = int(input())
+print(a // b)
+print(a / b)
+
+n = int(input())
+for i in range(n):
+    print(i*i)
+
+n = int(input())
+for i in range(1, n + 1):
+    print(i, end="")
+
